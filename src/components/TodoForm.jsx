@@ -20,12 +20,12 @@ function TodoForm() {
           <input
               type="text"
               placeholder="Write Todo..."
-              className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
+              className="w-full border border-black/10  rounded-l-full px-3 outline-none duration-150 bg-white/20 py-1.5"
               value={todo} //input is controlled by state
               onChange={(e) => setTodo(e.target.value)} // onChange:every keypress updates todo state with typed value, e.target.value: whatever is currently typed in the input
           />
-          <button type="submit" className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0">
-              Add
+          <button type="submit" className="rounded-r-lg px-5 py-2 bg-green-600 text-white shrink-0 text-base font-semibold active:scale-95 active:bg-green-800 transition-all duration-150 cursor-pointer">
+             Add
           </button>
       </form>
   );

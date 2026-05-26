@@ -2,8 +2,6 @@ import { useState ,useEffect} from 'react'
 import { TodoContext,TodoProvider,useTodo } from './context'
 import {TodoForm,TodoItem} from './components'
 
-
-
 function App() {
   const [todos, setTodos] = useState([])
   //this addTodo function is add new todo , in prev todo list
@@ -48,13 +46,12 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos))
   }, [todos])
   
-
-
   return (
    <TodoProvider value={{todos, addTodo, updateTodo, deleteTodo, toggleComplete}}> {/* here todos is  a reactive state variable define by useStae , not come from createContext default todos array */}
-      <div className="bg-[#172842] min-h-screen py-8">
-                <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
-                    <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
+    
+      <div className="bg-linear-to-br from-purple-700 via-blue-600 to-teal-500 min-h-screen py-8">
+                <div className="w-full max-w-2xl mx-auto bg-white/10 backdrop-blur-md shadow-xl rounded-2xl px-6 py-6 mt-10 text-amber-500">
+                    <h1 className="text-2xl font-bold text-center mb-8 mt-4">Manage Your Todos</h1>
                     <div className="mb-4">
                         {/* Todo form goes here */} 
                         <TodoForm />
@@ -71,6 +68,7 @@ function App() {
                     </div>
                 </div>
             </div>
+    
     </TodoProvider>
   )
 }
